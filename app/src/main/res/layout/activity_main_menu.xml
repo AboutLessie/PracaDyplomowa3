@@ -2,42 +2,29 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menuLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainMenuActivity">
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/pointsInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
-        android:text="Masz xx punktów!"
+        android:text="Masz $points punktów!"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-    <SeekBar
-        android:id="@+id/seekBar3"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="210dp"
-        android:layout_height="18dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        android:max="20"
-        android:progress="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
-        android:text="Witaj xxx !"
+        android:text="Witaj użytkowniku !"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -47,71 +34,170 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="474dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar3">
+        app:layout_constraintTop_toBottomOf="@+id/pointsInfo">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/espresso"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="espresso"
-                app:srcCompat="@drawable/espresso" />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/doppio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="doppio"
-                app:srcCompat="@drawable/doppio" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/latte"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="latte"
-                app:srcCompat="@drawable/latte" />
+                    <ImageView
+                        android:id="@+id/latte"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="20dp"
+                        app:srcCompat="@drawable/latte"
+                        tools:layout_editor_absoluteX="52dp"
+                        tools:layout_editor_absoluteY="220dp" />
 
-            <ImageView
-                android:id="@+id/cappuccino"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="cappuccino"
-                app:srcCompat="@drawable/cappuccino" />
+                    <CheckBox
+                        android:id="@+id/latteBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:text="Możesz otrzymać Latte!"
+                        android:textStyle="italic" />
 
-            <ImageView
-                android:id="@+id/flat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="flat"
-                app:srcCompat="@drawable/flat_white"
-                tools:layout_editor_absoluteX="155dp"
-                tools:layout_editor_absoluteY="372dp" />
+                </TableRow>
 
-            <ImageView
-                android:id="@+id/americano"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="americano"
-                app:srcCompat="@drawable/americano"
-                tools:layout_editor_absoluteX="166dp"
-                tools:layout_editor_absoluteY="230dp" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/americano"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        app:srcCompat="@drawable/americano"
+                        tools:layout_editor_absoluteX="138dp"
+                        tools:layout_editor_absoluteY="245dp" />
+
+                    <CheckBox
+                        android:id="@+id/americanoBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:text="Możesz otrzymać Amerciano!"
+                        android:textStyle="italic" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/cappuccino"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="20dp"
+                        app:srcCompat="@drawable/cappuccino"
+                        tools:layout_editor_absoluteX="155dp"
+                        tools:layout_editor_absoluteY="446dp" />
+
+                    <CheckBox
+                        android:id="@+id/cappuccinoBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:text="Możesz otrzymać Cappuccino!"
+                        android:textStyle="italic" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/doppio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="20dp"
+                        app:srcCompat="@drawable/doppio"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="437dp" />
+
+                    <CheckBox
+                        android:id="@+id/doppioBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:text="Możesz otrzymać Doppio!"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/espresso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="20dp"
+                        app:srcCompat="@drawable/espresso"
+                        tools:layout_editor_absoluteX="52dp"
+                        tools:layout_editor_absoluteY="267dp" />
+
+                    <CheckBox
+                        android:id="@+id/espressoBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:text="Możesz otrzymać Espresso!"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/flatWhite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="20dp"
+                        app:srcCompat="@drawable/flat_white"
+                        tools:layout_editor_absoluteX="318dp"
+                        tools:layout_editor_absoluteY="297dp" />
+
+                    <CheckBox
+                        android:id="@+id/flatBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:text="Możesz otrzymać Flat White!"
+                        android:textStyle="italic" />
+                </TableRow>
+            </TableLayout>
+
         </LinearLayout>
     </ScrollView>
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar3"
+        android:id="@+id/menuToolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -133,8 +219,23 @@
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar3"
-        app:layout_constraintTop_toTopOf="@+id/toolbar3" />
+        app:layout_constraintBottom_toBottomOf="@+id/menuToolbar"
+        app:layout_constraintEnd_toEndOf="@+id/menuToolbar"
+        app:layout_constraintTop_toTopOf="@+id/menuToolbar" />
+
+    <ProgressBar
+        android:id="@+id/pointsProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="131dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:max="20"
+        android:min="0"
+        android:progress="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pointsInfo"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
 
 </android.support.constraint.ConstraintLayout>

@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         loginBtn.setOnClickListener{
             val password = passwordTb.text.toString()
             d("alicja", "Password is $password")
