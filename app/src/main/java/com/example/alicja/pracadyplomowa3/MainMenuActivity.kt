@@ -36,7 +36,7 @@ class MainMenuActivity : AppCompatActivity() {
                 flatBox.isChecked = false
                 latteBox.isChecked = false
             }
-            points in 20..30 -> {
+            points in 21..30 -> {
                 cappuccinoBox.isChecked = true
                 doppioBox.isChecked = false
                 americanoBox.isChecked = true
