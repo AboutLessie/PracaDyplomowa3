@@ -28,36 +28,20 @@ class MainMenuActivity : AppCompatActivity() {
                 flatBox.isChecked = false
                 latteBox.isChecked = false
             }
-            points in 1..5 -> {
+            points in 10..20 -> {
+                cappuccinoBox.isChecked = true
+                doppioBox.isChecked = true
+                americanoBox.isChecked = false
+                espressoBox.isChecked = false
+                flatBox.isChecked = false
+                latteBox.isChecked = false
+            }
+            points in 20..30 -> {
                 cappuccinoBox.isChecked = true
                 doppioBox.isChecked = false
-                americanoBox.isChecked = false
-                espressoBox.isChecked = false
-                flatBox.isChecked = false
-                latteBox.isChecked = false
-            }
-            points in 6..10 -> {
-                cappuccinoBox.isChecked = true
-                doppioBox.isChecked = true
-                americanoBox.isChecked = false
-                espressoBox.isChecked = false
-                flatBox.isChecked = false
-                latteBox.isChecked = false
-            }
-            points in 11..15 -> {
-                cappuccinoBox.isChecked = true
-                doppioBox.isChecked = true
-                americanoBox.isChecked = true
-                espressoBox.isChecked = false
-                flatBox.isChecked = false
-                latteBox.isChecked = false
-            }
-            points in 16..20 -> {
-                cappuccinoBox.isChecked = true
-                doppioBox.isChecked = true
                 americanoBox.isChecked = true
                 espressoBox.isChecked = true
-                flatBox.isChecked = false
+                flatBox.isChecked = true
                 latteBox.isChecked = false
             }
             else -> {
